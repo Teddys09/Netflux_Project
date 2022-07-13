@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import { FaBell } from 'react-icons/fa';
 import { AiFillCaretDown } from 'react-icons/ai';
-import { RiPencilFill } from 'react-icons/ri';
+import { HiOutlinePencil } from 'react-icons/hi';
+import { VscAccount } from 'react-icons/vsc';
+import { BsQuestionCircle } from 'react-icons/bs';
 import LogoUser from './img/Netflix-avatar.png';
 import LogoUserGreen from './img/Netflix-avatar-green.png';
 import LogoUserRed from './img/Netflix-avatar-red.png';
@@ -32,8 +34,22 @@ const Header = () => {
             <img className="kids-logo" src={LogoUserKids} alt="Logo Kids" />{' '}
             Kids
           </li>
-          <li>
-            <RiPencilFill /> Profil param
+          <li className="li-svg">
+            <HiOutlinePencil /> <p>Manage Profiles</p>
+          </li>
+          <li className="li-breack"></li>
+          <li className="li-svg">
+            {' '}
+            <VscAccount />
+            <p>Account</p>
+          </li>
+          <li className="li-svg">
+            <BsQuestionCircle />
+            <p>Help Centre</p>
+          </li>
+          <li className="li-breack"></li>
+          <li className="li-signout">
+            <p>Sign out</p>
           </li>
         </ul>
       </div>
@@ -67,8 +83,8 @@ const Header = () => {
           </div>
           <div className="caret">
             <AiFillCaretDown onMouseEnter={() => setIsHover(!isHover)} />
+            {isHover ? <MakeCaretOpen /> : null}
           </div>
-          {isHover ? <MakeCaretOpen /> : null}
         </div>
       </div>
     </header>
