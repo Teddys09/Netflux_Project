@@ -6,16 +6,31 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 .header {
-  background: blue;
-  display: flex;
-  justify-content: space-between;
+  background-position: center center;
+  background-size: cover;
+
   padding: 0 4%;
   padding-top: 10px;
-  padding-bottom: 40%;
+  height: 60vh;
   position: relative;
 }
+@media screen and (min-width: 768px) {
+  .header {
+    height: 80vh;
+  }
+}
+@media screen and (max-width: 680px) {
+  .header {
+    height: 30vh;
+  }
+  .description {
+    top: 66px;
+    font-size: 1.6vw !important;
+  }
+}
+
 .header .header-logo a {
-  font-size: 25px;
+  font-size: 2vw !important;
   text-decoration: none;
   font-family: 'Bebas Neue', cursive;
   margin-right: 25px;
@@ -23,9 +38,15 @@ body {
   color: #e50914;
   cursor: pointer;
 }
+.header-banner {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
 .header-nav a {
-  font-size: 15px;
   text-decoration: none;
+  white-space: nowrap;
 
   color: #fff;
   cursor: pointer;
@@ -34,6 +55,30 @@ body {
 .first-nav {
   display: flex;
   align-items: center;
+  font-size: 1.2vw;
+}
+.header-nav {
+  color: #fff;
+  display: contents;
+}
+.browse {
+  margin: 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.browse svg {
+  font-size: 16px;
+}
+@media screen and (max-width: 883px) {
+  .header-nav a {
+    display: none;
+  }
+}
+@media screen and (min-width: 882px) {
+  .header-nav .browse {
+    display: none;
+  }
 }
 
 .second-nav {
@@ -50,6 +95,12 @@ body {
   cursor: pointer;
   margin-right: 15px;
 }
+@media screen and (max-width: 1100px) {
+  .second-nav a {
+    display: none;
+  }
+}
+
 .header-search {
   color: #fff;
 
@@ -68,16 +119,54 @@ body {
   cursor: pointer;
   transition: transform 367ms cubic-bezier(0.21, 0, 0.07, 1);
 }
+@media screen and (max-width: 950px) {
+  .caret {
+    display: none;
+  }
+}
 
 .user-logo img {
   border-radius: 4px;
   height: 32px;
   vertical-align: middle;
   width: 32px;
+  cursor: pointer;
+}
+.browse-open {
+  background-color: RGBA(0, 0, 11, 0.9);
+  position: absolute;
+  width: 220px;
+  top: 50px;
+  left: 15px;
+  z-index: 5;
+}
+.browse-open ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.browse-open ul li {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+}
+.browse-open ul :hover {
+  background-color: RGBA(28, 28, 28, 0.4);
+}
+.browse-open ul li a {
+  display: block;
+  font-size: 16px;
 }
 .caret-open {
-  background-color: RGBA(20, 14, 10, 0.9);
-
+  background-color: RGBA(0, 0, 11, 0.9);
+  color: #fff;
   position: absolute;
   width: 190px;
   top: 60px;
@@ -129,4 +218,58 @@ body {
 }
 .li-signout p {
   margin: 0px;
+}
+
+.description {
+  position: absolute;
+  bottom: 210px;
+  max-width: 30%;
+  font-size: 1.2vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.description-title {
+  color: #fff;
+}
+.overview {
+  color: #fff;
+}
+.header button {
+  padding: 0px 40px;
+  border-radius: 6px;
+  border: none;
+}
+.play {
+  margin-right: 7px;
+  font-size: 1.2vw;
+  cursor: pointer;
+}
+.info {
+  font-size: 1.2vw;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(109, 109, 110, 0.7);
+  white-space: nowrap;
+}
+.info svg {
+  font-size: 2.3vw;
+}
+.buttons {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.buttons svg {
+  margin-right: 5px;
+}
+.buttons text {
+  text-overflow: ellipsis;
+}
+.buttons button {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
