@@ -8,17 +8,18 @@ import { FaPlay } from 'react-icons/fa';
 import axios from 'axios';
 //import CartContext from './CartContext';
 
-import LogoUser from './img/Netflix-avatar.png';
+import LogoUser from '../../img/Netflix-avatar.png';
 
-import { MakeCaretOpen } from './components/MakeCaretOpen';
-import MakeBrowseOpen from './components/MakeBrowseOpen';
+import { MakeCaretOpen } from './MakeCaretOpen';
+import MakeBrowseOpen from './MakeBrowseOpen';
 
 const Header = () => {
   const [isHover, setIsHover] = useState(false);
   const [isHover2, setIsHover2] = useState(false);
   const [randomMovie, setRandomMovie] = useState('');
   const [headerData, setHeaderData] = useState([]);
-  const [baseUrl, setBaseUrl] = useState('http://image.tmdb.org/t/p/original');
+
+  const baseUrl = 'http://image.tmdb.org/t/p/original';
 
   useEffect(() => {
     async function fetchData() {
@@ -40,7 +41,7 @@ const Header = () => {
     }
     fetchData();
   }, []);
-  console.log(headerData);
+
   // /mrSY8HTkW4Hgu4FYqu0KQ7LEWbG.jpg
   // http://image.tmdb.org/t/p/w500/9eAn20y26wtB3aet7w9lHjuSgZ3.jpg
 

@@ -2,10 +2,10 @@ import { HiOutlinePencil } from 'react-icons/hi';
 import { VscAccount } from 'react-icons/vsc';
 import { BsQuestionCircle } from 'react-icons/bs';
 
-import LogoUserGreen from '../img/Netflix-avatar-green.png';
-import LogoUserRed from '../img/Netflix-avatar-red.png';
-import LogoUserPinguin from '../img/Netflix-avatar-pinguin.png';
-import LogoUserKids from '../img/kids-netflix.png';
+import LogoUserGreen from '../../img/Netflix-avatar-green.png';
+import LogoUserRed from '../../img/Netflix-avatar-red.png';
+import LogoUserPinguin from '../../img/Netflix-avatar-pinguin.png';
+import LogoUserKids from '../../img/kids-netflix.png';
 
 export const MakeCaretOpen = () => {
   return (
