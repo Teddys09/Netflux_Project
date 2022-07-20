@@ -3,37 +3,21 @@ import axios from 'axios';
 import { AiFillCaretRight } from 'react-icons/ai';
 import { AiFillCaretLeft } from 'react-icons/ai';
 
-const Card = ({ title, data }) => {
+const TopRated = ({ title }) => {
   const baseUrl = 'http://image.tmdb.org/t/p/original';
-  const [dataPopular, setDataPopular] = useState([]);
-  const [dataLatestMovie, setDataLatestMovie] = useState([]);
   const [caretClickedLeft, setCaretClickedLeft] = useState(false);
   const [caretClickedRight, setCaretClickedRight] = useState(false);
   const [translateRight, setTranslateRight] = useState(0);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       await axios
         .get(
-          `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
+          `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
         )
         .then((res) => {
-          setDataPopular(res.data.results);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-    fetchData();
-  }, []);
-  useEffect(() => {
-    async function fetchData() {
-      await axios
-        .get(
-          `https://api.themoviedb.org/3/movie/latest?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
-        )
-        .then((res) => {
-          setDataLatestMovie(res.data.results);
+          setData(res.data.results);
         })
         .catch((err) => {
           console.log(err);
@@ -73,7 +57,7 @@ const Card = ({ title, data }) => {
         <div className="caret-left">
           <AiFillCaretLeft onClick={() => handleCaretClickLeft()} />
         </div>
-        {dataPopular.map((item) => (
+        {data.map((item) => (
           <div
             className="image-container"
             key={item.id}
@@ -86,7 +70,6 @@ const Card = ({ title, data }) => {
             />
           </div>
         ))}
-
         <div className="caret-right">
           <AiFillCaretRight onClick={() => handleCaretClickRight()} />
         </div>
@@ -95,4 +78,4 @@ const Card = ({ title, data }) => {
   );
 };
 
-export default Card;
+export default TopRated;
