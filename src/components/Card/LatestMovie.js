@@ -63,8 +63,13 @@ const LatestMovie = ({ title }) => {
             key={item.id}
             style={containerImageStyle}
           >
+            <p className="content-title">{item.title || item.name}</p>
             <img
-              src={baseUrl + item.backdrop_path}
+              src={
+                item.backdrop_path || item.poster_path
+                  ? baseUrl + item.backdrop_path || item.poster_path
+                  : ''
+              }
               alt={item.title || item.name}
               className="card-image"
             />

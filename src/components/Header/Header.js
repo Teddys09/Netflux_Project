@@ -50,7 +50,16 @@ const Header = () => {
   };
   return (
     <header>
-      <div className="header" style={headerStyle}>
+      <div
+        className="header"
+        style={
+          randomMovie.backdrop_path
+            ? headerStyle
+            : {
+                backgroundImage: 'none',
+              }
+        }
+      >
         <div className="header-banner">
           <div className="first-nav">
             <div className="header-logo">

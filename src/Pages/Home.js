@@ -3,6 +3,7 @@ import Card from '../components/Card/Card';
 import LatestMovie from '../components/Card/LatestMovie';
 import SeriesPopular from '../components/Card/SeriesPopular';
 import TopRated from '../components/Card/TopRated';
+import Footer from '../components/Footer';
 
 import Header from '../components/Header/Header';
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
         <TopRated title="Top Rated Movies" />
         <LatestMovie title="Latest Movie " />
       </div>
+      <Footer />
     </div>
   );
 };

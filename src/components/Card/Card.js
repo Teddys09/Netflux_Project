@@ -26,21 +26,6 @@ const Card = ({ title, data }) => {
     }
     fetchData();
   }, []);
-  useEffect(() => {
-    async function fetchData() {
-      await axios
-        .get(
-          `https://api.themoviedb.org/3/movie/latest?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
-        )
-        .then((res) => {
-          setDataLatestMovie(res.data.results);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-    fetchData();
-  }, []);
 
   const handleCaretClickLeft = () => {
     setCaretClickedLeft(!caretClickedLeft);
@@ -79,8 +64,13 @@ const Card = ({ title, data }) => {
             key={item.id}
             style={containerImageStyle}
           >
+            <p className="content-title">{item.title || item.name}</p>
             <img
-              src={baseUrl + item.backdrop_path}
+              src={
+                item.backdrop_path || item.poster_path
+                  ? baseUrl + item.backdrop_path || item.poster_path
+                  : ''
+              }
               alt={item.title || item.name}
               className="card-image"
             />
