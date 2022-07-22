@@ -330,7 +330,7 @@ header {
 }
 
 .card-container ::-webkit-scrollbar {
-  -webkit-appearance: none;
+  display: none;
 }
 
 .card-title {
@@ -458,4 +458,10 @@ footer {
   .footer-link li {
     flex: 0 0 50%;
   }
+}
+
+/*---------------------SERIES--------------------------------*/
+.series {
+  background-color: #141414;
+  height: 100vh;
 }
