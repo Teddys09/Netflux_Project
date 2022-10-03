@@ -265,6 +265,8 @@ header {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 }
 
 .description-title {
@@ -338,6 +340,7 @@ header {
   font-weight: bold;
   margin: 0px;
   padding-left: 18px;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
 }
 
 .card-images {
@@ -407,6 +410,7 @@ hsla(0,0%,8%,.5)*/
   word-spacing: 3px;
   padding: 12px;
   font-weight: bold;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
 }
 
 /*---------------------FOOTER--------------------------------*/

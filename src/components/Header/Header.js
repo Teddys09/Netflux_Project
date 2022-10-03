@@ -5,45 +5,30 @@ import { FaBell } from 'react-icons/fa';
 import { AiFillCaretDown } from 'react-icons/ai';
 import { VscInfo } from 'react-icons/vsc';
 import { FaPlay } from 'react-icons/fa';
-import axios from 'axios';
-//import CartContext from './CartContext';
-
 import LogoUser from '../../img/Netflix-avatar.png';
-
 import { MakeCaretOpen } from './MakeCaretOpen';
 import MakeBrowseOpen from './MakeBrowseOpen';
+import useFetch from '../../utils/useFetch';
 
 const Header = () => {
   const [isHover, setIsHover] = useState(false);
   const [isHover2, setIsHover2] = useState(false);
   const [randomMovie, setRandomMovie] = useState('');
-  const [headerData, setHeaderData] = useState([]);
 
   const baseUrl = 'http://image.tmdb.org/t/p/original';
 
-  useEffect(() => {
-    async function fetchData() {
-      await axios
-        .get(
-          `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
-        )
-        .then((res) => {
-          setHeaderData(res.data.results);
-          setRandomMovie(
-            res.data.results[
-              Math.floor(Math.random() * res.data.results.length)
-            ]
-          );
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-    fetchData();
-  }, []);
+  const popularSeriesAndMovies = useFetch(
+    `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
+  );
 
-  // /mrSY8HTkW4Hgu4FYqu0KQ7LEWbG.jpg
-  // http://image.tmdb.org/t/p/w500/9eAn20y26wtB3aet7w9lHjuSgZ3.jpg
+  useEffect(() => {
+    if (popularSeriesAndMovies) {
+      const random = Math.floor(
+        Math.random() * popularSeriesAndMovies.results.length
+      );
+      setRandomMovie(popularSeriesAndMovies.results[random]);
+    }
+  }, [popularSeriesAndMovies]);
 
   const headerStyle = {
     backgroundImage: `url(${baseUrl}${randomMovie.backdrop_path})`,

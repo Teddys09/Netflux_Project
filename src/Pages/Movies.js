@@ -1,7 +1,7 @@
 import React from 'react';
-import LatestMovie from '../components/Card/LatestMovie';
-import MoviesNowPlaying from '../components/Card/MoviesNowPlaying';
-import TopRated from '../components/Card/TopRated';
+
+import Card from '../components/Card/Card';
+
 import Footer from '../components/Footer';
 import Header from '../components/Header/Header';
 
@@ -10,9 +10,9 @@ const Movies = () => {
     <div className="Movies">
       <Header />
       <div className="home-container">
-        <LatestMovie title="Latest Movie" />
-        <TopRated title="Top Rated Movies" />
-        <MoviesNowPlaying title="Upcoming Movies" />
+        <Card title="Latest Movie" />
+        <Card title="Top Rated Movies" />
+        <Card title="Upcoming Movies" />
       </div>
       <Footer />
     </div>

@@ -1,31 +1,63 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { AiFillCaretRight } from 'react-icons/ai';
 import { AiFillCaretLeft } from 'react-icons/ai';
+import useFetch from '../../utils/useFetch';
 
-const Card = ({ title, data }) => {
+const Card = ({ title }) => {
   const baseUrl = 'http://image.tmdb.org/t/p/original';
-  const [dataPopular, setDataPopular] = useState([]);
-  const [dataLatestMovie, setDataLatestMovie] = useState([]);
   const [caretClickedLeft, setCaretClickedLeft] = useState(false);
   const [caretClickedRight, setCaretClickedRight] = useState(false);
   const [translateRight, setTranslateRight] = useState(0);
+  const [data, setData] = useState(null);
+
+  const latestSeries = useFetch(
+    `https://api.themoviedb.org/3/tv/on_the_air?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
+  );
+  const popularSeries = useFetch(
+    `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
+  );
+  const topRatedSeries = useFetch(
+    `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
+  );
+  const latestMovies = useFetch(
+    `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
+  );
+  const popularMovies = useFetch(
+    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
+  );
+  const topRatedMovies = useFetch(
+    `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
+  );
+  const popularSeriesAndMovies = useFetch(
+    `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
+  );
 
   useEffect(() => {
-    async function fetchData() {
-      await axios
-        .get(
-          `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
-        )
-        .then((res) => {
-          setDataPopular(res.data.results);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    if (title === 'Latest Series') {
+      setData(latestSeries);
+    } else if (title === 'Most Popular Series') {
+      setData(popularSeries);
+    } else if (title === 'Top Rated Series') {
+      setData(topRatedSeries);
+    } else if (title === 'Latest Movies') {
+      setData(latestMovies);
+    } else if (title === 'Most Popular Movies') {
+      setData(popularMovies);
+    } else if (title === 'Top Rated Movies') {
+      setData(topRatedMovies);
+    } else if (title === 'Most Popular on Netflux') {
+      setData(popularSeriesAndMovies);
     }
-    fetchData();
-  }, []);
+  }, [
+    title,
+    latestSeries,
+    popularSeries,
+    topRatedSeries,
+    latestMovies,
+    popularMovies,
+    topRatedMovies,
+    popularSeriesAndMovies,
+  ]);
 
   const handleCaretClickLeft = () => {
     setCaretClickedLeft(!caretClickedLeft);
@@ -58,7 +90,7 @@ const Card = ({ title, data }) => {
         <div className="caret-left">
           <AiFillCaretLeft onClick={() => handleCaretClickLeft()} />
         </div>
-        {dataPopular.map((item) => (
+        {data?.results.map((item) => (
           <div
             className="image-container"
             key={item.id}
@@ -68,15 +100,14 @@ const Card = ({ title, data }) => {
             <img
               src={
                 item.backdrop_path || item.poster_path
-                  ? baseUrl + item.backdrop_path || item.poster_path
-                  : ''
+                  ? `${baseUrl}${item.backdrop_path || item.poster_path}`
+                  : 'https://www.thermaxglobal.com/wp-content/uploads/2020/05/image-not-found.jpg'
               }
               alt={item.title || item.name}
               className="card-image"
             />
           </div>
         ))}
-
         <div className="caret-right">
           <AiFillCaretRight onClick={() => handleCaretClickRight()} />
         </div>
