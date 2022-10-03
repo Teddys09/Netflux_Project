@@ -55,7 +55,9 @@ const Header = () => {
                 Browse{' '}
                 <AiFillCaretDown onMouseEnter={() => setIsHover2(!isHover2)} />
               </p>
-              {isHover2 ? <MakeBrowseOpen /> : null}
+              <div onMouseLeave={() => setIsHover2(!isHover2)}>
+                {isHover2 ? <MakeBrowseOpen /> : null}
+              </div>
 
               <Link to="/">Home</Link>
               <Link to="/series">Series</Link>
@@ -73,16 +75,15 @@ const Header = () => {
             <div className="bell">
               <FaBell />
             </div>
-            <div className="user-logo">
-              <img
-                src={LogoUser}
-                alt="Netflix Logo"
-                onMouseEnter={() => setIsHover(!isHover)}
-              />
-              {isHover ? <MakeCaretOpen /> : null}
+            <div className="logo-caret" onMouseEnter={() => setIsHover(true)}>
+              <div className="user-logo">
+                <img src={LogoUser} alt="Netflix Logo" />
+              </div>
+              <div className="caret">
+                <AiFillCaretDown />
+              </div>
             </div>
-            <div className="caret">
-              <AiFillCaretDown onMouseEnter={() => setIsHover(!isHover)} />
+            <div onMouseLeave={() => setIsHover(false)}>
               {isHover ? <MakeCaretOpen /> : null}
             </div>
           </div>

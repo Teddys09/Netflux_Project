@@ -124,6 +124,10 @@ header {
 .second-nav div {
   margin-right: 15px;
 }
+.logo-caret {
+  display: flex;
+  align-items: self-end;
+}
 .second-nav a {
   color: #fff;
   text-decoration: none;
