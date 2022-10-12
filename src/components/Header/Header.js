@@ -8,43 +8,45 @@ import { FaPlay } from 'react-icons/fa';
 import LogoUser from '../../img/Netflix-avatar.png';
 import { MakeCaretOpen } from './MakeCaretOpen';
 import MakeBrowseOpen from './MakeBrowseOpen';
-import useFetch from '../../utils/useFetch';
+
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const [isHover, setIsHover] = useState(false);
   const [isHover2, setIsHover2] = useState(false);
   const [randomMovie, setRandomMovie] = useState('');
-
+  const [randomImg, setRandomImg] = useState('');
   const baseUrl = 'http://image.tmdb.org/t/p/original';
+  const media = useSelector((state) => state.media);
+  const moviesSeries = media.moviesAndSeries[0]?.data.results;
 
-  const popularSeriesAndMovies = useFetch(
-    `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_PRIVATE_KEY}&language=en-US&page=1`
-  );
+  const carretStyle = isHover
+    ? { transform: 'rotate(180deg)', transition: 'all 0.3s ease-in-out' }
+    : { transform: 'rotate(0deg)', transition: 'all 0.3s ease-in-out' };
 
   useEffect(() => {
-    if (popularSeriesAndMovies) {
-      const random = Math.floor(
-        Math.random() * popularSeriesAndMovies.results.length
-      );
-      setRandomMovie(popularSeriesAndMovies.results[random]);
+    if (moviesSeries) {
+      const random = Math.floor(Math.random() * moviesSeries.length);
+      setRandomMovie(moviesSeries[random]);
     }
-  }, [popularSeriesAndMovies]);
+  }, [moviesSeries]);
+
+  useEffect(() => {
+    let holderMovie = randomMovie;
+
+    if (holderMovie.blob) {
+      setRandomImg(holderMovie.blob);
+    } else {
+      setRandomImg(baseUrl + holderMovie.backdrop_path);
+    }
+  }, [randomMovie]);
 
   const headerStyle = {
-    backgroundImage: `url(${baseUrl}${randomMovie.backdrop_path})`,
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${randomImg})`,
   };
   return (
     <header>
-      <div
-        className="header"
-        style={
-          randomMovie.backdrop_path
-            ? headerStyle
-            : {
-                backgroundImage: 'none',
-              }
-        }
-      >
+      <div className="header" style={headerStyle}>
         <div className="header-banner">
           <div className="first-nav">
             <div className="header-logo">
@@ -79,7 +81,7 @@ const Header = () => {
               <div className="user-logo">
                 <img src={LogoUser} alt="Netflix Logo" />
               </div>
-              <div className="caret">
+              <div className="caret" style={carretStyle}>
                 <AiFillCaretDown />
               </div>
             </div>

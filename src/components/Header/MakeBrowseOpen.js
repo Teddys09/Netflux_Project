@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-//<Link to="/">Home</Link>
-//<Link to="/series">Series</Link>
-//<Link to="/movies">Movies</Link>
-//<Link to="/new">New & Popular</Link>
 const MakeBrowseOpen = () => {
   return (
     <div className="browse-open">
