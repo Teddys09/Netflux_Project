@@ -7,6 +7,7 @@ const data = createSlice({
     movies: [],
     series: [],
     moviesAndSeries: [],
+    userList: [],
   },
   reducers: {
     addMedia(state, action) {
@@ -26,10 +27,19 @@ const data = createSlice({
         addItem(state.moviesAndSeries, action.payload);
       }
     },
+    addToList(state, action) {
+      state.userList.push(action.payload);
+      const checkIfInList = state.userList.filter(
+        (item) => item.id === action.payload.id
+      );
+      if (checkIfInList.length > 1) {
+        state.userList.pop();
+      }
+    },
   },
 });
 
-export const { addMedia } = data.actions;
+export const { addMedia, addToList } = data.actions;
 
 export const store = configureStore({
   reducer: {

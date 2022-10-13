@@ -41,26 +41,27 @@ header {
 
 @media screen and (min-width: 1280px) {
   .header {
-    height: 80vh;
+    height: 90vh;
   }
-}
-@media screen and (min-width: 1440px) {
-  .header {
-    height: 95vh;
+  .home-container {
+    margin-top: -25vh !important;
+  }
+  .description {
+    bottom: 324px !important;
   }
 }
 
 @media screen and (max-width: 680px) {
   .header {
-    height: 30vh;
+    height: 40vh;
   }
   .description {
     top: 66px;
     font-size: 1.6vw !important;
-    max-width: 98% !important;
+    max-width: 58% !important;
   }
   .home-container {
-    margin-top: -74px !important;
+    margin-top: -107px !important;
   }
 }
 
@@ -344,23 +345,40 @@ header {
   padding-left: 18px;
   text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
 }
+.card-title-list {
+  font-size: 1.5vw;
+  font-weight: bold;
+  margin: 0px;
+  padding-left: 18px;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+}
 
 .card-images {
   display: flex;
   align-items: center;
   overflow-x: visible;
   overflow-y: hidden;
-
+  gap: 14px;
   padding: 0.5rem 0;
   padding-left: 10px;
 }
 .card-image {
   padding: 0.5rem;
   transition: transform 0.3s ease-in-out;
-
-  max-width: 23vw;
-  max-height: 13vw;
+  width: 22vw;
+  height: 13vw;
+  background-position: center center;
+  background-size: cover;
 }
+.card-list {
+  padding: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+  height: 33vw;
+  background-position: center center;
+  background-size: cover;
+  width: 23vw;
+}
+
 /* transform: translate3d(-100%, 0, 0); */
 .card-image:hover {
   cursor: pointer;
@@ -372,6 +390,7 @@ header {
   transition: transform 0.5s ease-in-out;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 .home-container {
   margin-top: -180px;
@@ -407,7 +426,7 @@ hsla(0,0%,8%,.5)*/
   position: absolute;
   top: 8px;
   margin: 0px;
-  font-size: 75%;
+  font-size: 1.3vw;
   z-index: 1;
   word-spacing: 3px;
   padding: 12px;
@@ -470,4 +489,20 @@ footer {
 .series {
   background-color: #141414;
   height: 100vh;
+}
+
+/*---------------------Add List--------------------------------*/
+.addList-div {
+  border-radius: 50%;
+  width: 5vw;
+  background-color: #141414;
+  position: absolute;
+  bottom: 10px;
+  height: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addList {
+  font-size: 2.5vw;
 }

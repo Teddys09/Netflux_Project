@@ -19,7 +19,7 @@ const useFetch = (url, title) => {
       Axios.get(url)
         .then((response) => {
           let data = response.data;
-          console.log(data);
+
           dispatch(addMedia({ title, data }));
           return data;
         })

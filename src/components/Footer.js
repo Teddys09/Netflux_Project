@@ -6,19 +6,19 @@ const Footer = () => {
     <footer>
       <div className="footer-container">
         <div className="footer-icons">
-          <a href="https://www.facebook.com/">
+          <a href="https://www.facebook.com/" aria-label="Facebook">
             <FaFacebookF />
           </a>
 
-          <a href="https://www.instagram.com/">
+          <a href="https://www.instagram.com/" aria-label="Instagram">
             <FaInstagram />
           </a>
 
-          <a href="https://twitter.com/">
+          <a href="https://twitter.com/" aria-label="Twitter">
             <FaTwitter />
           </a>
 
-          <a href="https://www.youtube.com/">
+          <a href="https://www.youtube.com/" aria-label="Youtube">
             <FaYoutube />
           </a>
         </div>
