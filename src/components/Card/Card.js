@@ -9,11 +9,15 @@ const Card = ({ data }) => {
   const [caretClickedRight, setCaretClickedRight] = useState(false);
   const [translateRight, setTranslateRight] = useState(0);
   const [cardHover, setCardHover] = useState('');
+  // get the creen width
+  const screenWidth = window.innerWidth;
 
   const handleCaretClickLeft = () => {
     setCaretClickedLeft(!caretClickedLeft);
     if (translateRight === 0) {
       setTranslateRight((prev) => (prev = 0));
+    } else if (screenWidth < 700) {
+      setTranslateRight((prev) => prev + 210);
     } else {
       setTranslateRight((prev) => prev + 420);
     }
@@ -23,6 +27,8 @@ const Card = ({ data }) => {
     setCaretClickedRight(!caretClickedRight);
     if (translateRight < -1600) {
       setTranslateRight((prev) => (prev = 0));
+    } else if (screenWidth < 700) {
+      setTranslateRight((prev) => prev + -210);
     } else {
       setTranslateRight((prev) => prev + -420);
     }
