@@ -47,7 +47,7 @@ header {
     margin-top: -25vh !important;
   }
   .description {
-    bottom: 324px !important;
+    bottom: 32% !important;
   }
 }
 
@@ -134,7 +134,7 @@ header {
 .second-nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 1.2vw;
   cursor: pointer;
   margin-right: 15px;
 }
@@ -147,18 +147,18 @@ header {
 .header-search {
   color: #fff;
 
-  font-size: 21px;
+  font-size: 1.8vw;
   cursor: pointer;
 }
 .bell {
   color: #fff;
 
-  font-size: 21px;
+  font-size: 1.8vw;
   cursor: pointer;
 }
 .caret {
   color: #fff;
-  font-size: 16px;
+  font-size: 1.3vw;
   cursor: pointer;
   transition: transform 367ms cubic-bezier(0.21, 0, 0.07, 1);
 }
@@ -170,9 +170,9 @@ header {
 
 .user-logo img {
   border-radius: 4px;
-  height: 32px;
+  height: 2.8vw;
   vertical-align: middle;
-  width: 32px;
+  width: 2.8vw;
   cursor: pointer;
 }
 .browse-open {
@@ -192,14 +192,17 @@ header {
   padding: 0px;
   margin: 0px;
 }
-.browse-open ul li {
+.browse-open ul a {
   cursor: pointer;
   width: 100%;
   display: flex;
   justify-content: center;
   height: 50px;
   align-items: center;
+  margin: 0px;
+  font-size: 16px;
 }
+
 .browse-open ul :hover {
   background-color: RGBA(28, 28, 28, 0.4);
 }
@@ -212,7 +215,7 @@ header {
   color: #fff;
   position: absolute;
   width: 190px;
-  top: 60px;
+  top: 11%;
   right: 45px;
   margin-right: 0px !important;
   z-index: 4;
@@ -395,6 +398,10 @@ header {
 
 /* transform: translate3d(-100%, 0, 0); */
 .card-image:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.card-list:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
