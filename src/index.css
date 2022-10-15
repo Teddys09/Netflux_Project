@@ -150,6 +150,12 @@ header {
     width: 30px !important;
     height: 30px !important;
   }
+  .user-logo {
+    margin: 0 !important;
+  }
+  .logo-caret {
+    margin: 0 !important;
+  }
 }
 
 .second-nav {
@@ -261,7 +267,7 @@ header {
 }
 .browse-hidden {
   height: 28px !important;
-  top: -23px !important;
+  top: -21px !important;
 }
 .caret-open ul {
   list-style-type: none;
