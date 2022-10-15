@@ -7,6 +7,7 @@ body {
   position: absolute;
   width: 100%;
   z-index: -2;
+  background-color: #141414;
 }
 /******************* HOME ********************/
 .home {
@@ -21,7 +22,6 @@ header {
 .header {
   background-position: center center;
   background-size: cover;
-
   padding: 0 4%;
   padding-top: 10px;
   height: 60vh;
@@ -53,23 +53,36 @@ header {
 
 @media screen and (max-width: 700px) {
   .header {
-    height: 40vh;
+    height: 90vh;
   }
   .description {
-    top: 66px;
-    font-size: 1.7vw !important;
+    bottom: 21% !important;
+    font-size: 16px !important;
     max-width: 58% !important;
   }
   .card-title {
-    font-size: 1.9vw !important;
+    font-size: 18px !important;
   }
   .home-container {
     margin-top: -107px !important;
   }
+  .description-title h1 {
+    margin: 0;
+    font-size: 20px !important;
+  }
+  .play {
+    font-size: 16px !important;
+  }
+  .info {
+    font-size: 16px !important;
+  }
+  .info svg {
+    font-size: 20px !important;
+  }
 }
 
 .header .header-logo a {
-  font-size: 2vw !important;
+  font-size: 2vw;
   text-decoration: none;
   font-family: 'Bebas Neue', cursive;
   margin-right: 25px;
@@ -96,6 +109,7 @@ header {
   align-items: center;
   font-size: 1.2vw;
 }
+
 .header-nav {
   color: #fff;
   display: contents;
@@ -117,6 +131,24 @@ header {
 @media screen and (min-width: 882px) {
   .header-nav .browse {
     display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .first-nav {
+    font-size: 16px;
+  }
+  .header-logo a {
+    font-size: 22px !important ;
+  }
+  .header-search {
+    font-size: 20px !important;
+  }
+  .bell {
+    font-size: 20px !important;
+  }
+  .user-logo img {
+    width: 30px !important;
+    height: 30px !important;
   }
 }
 
@@ -219,6 +251,13 @@ header {
   right: 45px;
   margin-right: 0px !important;
   z-index: 4;
+}
+.invisible-div {
+  position: absolute;
+
+  top: -30px;
+  height: 100px;
+  width: 100%;
 }
 .caret-open ul {
   list-style-type: none;
@@ -379,10 +418,10 @@ header {
 @media screen and (max-width: 700px) {
   .card-image {
     width: 41vw;
-    height: 13vw;
+    height: 24vw;
   }
   .content-title {
-    font-size: 1.5vw !important;
+    font-size: 15px !important;
     top: -4px !important;
   }
 }

@@ -9,6 +9,7 @@ import LogoUserKids from '../../img/kids-netflix.png';
 export const MakeCaretOpen = () => {
   return (
     <div className="caret-open ">
+      <div className="invisible-div"></div>
       <ul>
         <li>
           <img src={LogoUserGreen} alt="Logo User Green" /> user2
