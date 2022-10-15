@@ -24,6 +24,10 @@ const Header = () => {
     ? { transform: 'rotate(180deg)', transition: 'all 0.3s ease-in-out' }
     : { transform: 'rotate(0deg)', transition: 'all 0.3s ease-in-out' };
 
+  const carretStyle2 = isHover2
+    ? { transform: 'rotate(180deg)', transition: 'all 0.3s ease-in-out' }
+    : { transform: 'rotate(0deg)', transition: 'all 0.3s ease-in-out' };
+
   useEffect(() => {
     if (moviesSeries) {
       const random = Math.floor(Math.random() * moviesSeries.length);
@@ -53,10 +57,12 @@ const Header = () => {
               <Link to="/">NETFLUX</Link>
             </div>
             <div className="header-nav">
-              <p className="browse">
-                Browse{' '}
-                <AiFillCaretDown onMouseEnter={() => setIsHover2(!isHover2)} />
-              </p>
+              <div
+                className="browse"
+                onMouseEnter={() => setIsHover2(!isHover2)}
+              >
+                Browse <AiFillCaretDown style={carretStyle2} />
+              </div>
               <div onMouseLeave={() => setIsHover2(!isHover2)}>
                 {isHover2 ? <MakeBrowseOpen /> : null}
               </div>

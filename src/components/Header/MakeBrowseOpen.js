@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const MakeBrowseOpen = () => {
   return (
     <div className="browse-open">
-      <div className="invisible-div"></div>
+      <div className="invisible-div browse-hidden"></div>
       <ul>
         <Link to="/">
           <li>Home</li>

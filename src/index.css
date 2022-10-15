@@ -259,6 +259,10 @@ header {
   height: 100px;
   width: 100%;
 }
+.browse-hidden {
+  height: 28px !important;
+  top: -23px !important;
+}
 .caret-open ul {
   list-style-type: none;
   padding: 0;
