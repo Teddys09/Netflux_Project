@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Netflux_Project/static/css/main.96c4285e.css",
-    "main.js": "/Netflux_Project/static/js/main.2cbb66b8.js",
+    "main.css": "/Netflux_Project/static/css/main.c6130f89.css",
+    "main.js": "/Netflux_Project/static/js/main.993937aa.js",
     "static/js/787.3e18af96.chunk.js": "/Netflux_Project/static/js/787.3e18af96.chunk.js",
     "static/media/kids-netflix.png": "/Netflux_Project/static/media/kids-netflix.65575b66ce6be2450013.png",
     "index.html": "/Netflux_Project/index.html",
-    "main.96c4285e.css.map": "/Netflux_Project/static/css/main.96c4285e.css.map",
-    "main.2cbb66b8.js.map": "/Netflux_Project/static/js/main.2cbb66b8.js.map",
+    "main.c6130f89.css.map": "/Netflux_Project/static/css/main.c6130f89.css.map",
+    "main.993937aa.js.map": "/Netflux_Project/static/js/main.993937aa.js.map",
     "787.3e18af96.chunk.js.map": "/Netflux_Project/static/js/787.3e18af96.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.96c4285e.css",
-    "static/js/main.2cbb66b8.js"
+    "static/css/main.c6130f89.css",
+    "static/js/main.993937aa.js"
   ]
 }
