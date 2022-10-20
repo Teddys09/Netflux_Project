@@ -422,6 +422,7 @@ header {
   padding-left: 10px;
 }
 .card-image {
+  text-align: center;
   padding: 0.5rem;
   transition: transform 0.3s ease-in-out;
   width: 22vw;
@@ -437,6 +438,13 @@ header {
   .content-title {
     font-size: 15px !important;
     top: -4px !important;
+  }
+  .card-title-list {
+    font-size: 18px !important;
+  }
+  .card-list {
+    height: 65vw !important;
+    width: 43vw !important;
   }
 }
 
@@ -498,15 +506,13 @@ hsla(0,0%,8%,.5)*/
 }
 
 .content-title {
-  position: absolute;
-  top: 8px;
-  margin: 0px;
   font-size: 1.3vw;
   z-index: 1;
   word-spacing: 3px;
-  padding: 12px;
-  font-weight: bold;
+
+  font-weight: 400;
   text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+  margin: 0px;
 }
 
 /*---------------------FOOTER--------------------------------*/

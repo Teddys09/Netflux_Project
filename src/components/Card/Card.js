@@ -58,13 +58,11 @@ const Card = ({ data }) => {
             key={item.id}
             style={containerImageStyle}
           >
-            <p className="content-title">{item.title || item.name}</p>
-
             <div
               onMouseEnter={(e) => hangleHover(e, item)}
               onMouseLeave={() => setCardHover('')}
               style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)),url(${
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0)),url(${
                   item?.blob ? item.blob : baseUrl + item?.backdrop_path
                 })`,
               }}
@@ -72,6 +70,7 @@ const Card = ({ data }) => {
               id={item.title || item.name}
               className="card-image"
             >
+              <p className="content-title">{item.title || item.name}</p>
               {cardHover === (item.title || item.name) ? (
                 <AddToList {...item} />
               ) : null}
