@@ -5,18 +5,8 @@ import Footer from '../components/Footer';
 import Header from '../components/Header/Header';
 import CallUseFetch from '../utils/CallUseFetch';
 const Home = () => {
-  const media = useSelector((state) => state.media);
   CallUseFetch();
-
-  const topRatedM = media.movies.filter((movie) =>
-    movie.title.includes('Top Rated Movies')
-  );
-  const latestM = media.movies.filter((movie) =>
-    movie.title.includes('Latest Movies')
-  );
-  const mostS = media.series.filter((series) =>
-    series.title.includes('Most Popular Series')
-  );
+  const media = useSelector((state) => state.media);
 
   if (
     media.movies.length === 0 ||
@@ -25,6 +15,15 @@ const Home = () => {
   ) {
     return <div>Loading...</div>;
   } else {
+    const topRatedM = media.movies.filter((movie) =>
+      movie.title.includes('Top Rated Movies')
+    );
+    const latestM = media.movies.filter((movie) =>
+      movie.title.includes('Latest Movies')
+    );
+    const mostS = media.series.filter((series) =>
+      series.title.includes('Most Popular Series')
+    );
     return (
       <div className="home">
         <Header />

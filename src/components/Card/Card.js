@@ -50,7 +50,10 @@ const Card = ({ data }) => {
       <h2 className="card-title">{data?.title}</h2>
       <div className="card-images">
         <div className="caret-left">
-          <AiFillCaretLeft onClick={() => handleCaretClickLeft()} />
+          <AiFillCaretLeft
+            role={data?.title + 'left'}
+            onClick={() => handleCaretClickLeft()}
+          />
         </div>
         {data?.data.results.map((item) => (
           <div
@@ -78,7 +81,10 @@ const Card = ({ data }) => {
           </div>
         ))}
         <div className="caret-right">
-          <AiFillCaretRight onClick={() => handleCaretClickRight()} />
+          <AiFillCaretRight
+            role={data?.title + 'right'}
+            onClick={() => handleCaretClickRight()}
+          />
         </div>
       </div>
     </div>

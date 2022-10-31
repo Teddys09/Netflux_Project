@@ -33,6 +33,11 @@ header {
     height: 65vh;
   }
 }
+@media screen and (max-height: 600px) {
+  .header {
+    height: 95vh;
+  }
+}
 @media screen and (min-width: 1024px) {
   .header {
     height: 70vh;
@@ -608,4 +613,13 @@ footer {
 }
 .my-list-text {
   margin-bottom: 0px;
+}
+
+@media screen and (max-width: 1001px) {
+  .home-container {
+    margin-top: -80px;
+  }
+  .description {
+    bottom: 120px;
+  }
 }

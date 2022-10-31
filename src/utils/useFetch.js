@@ -15,7 +15,7 @@ const useFetch = (url, title) => {
   const media = useSelector((state) => state.media);
 
   useEffect(() => {
-    if (media.movies.length === 0) {
+    if (media?.movies?.length === 0) {
       Axios.get(url)
         .then((response) => {
           let data = response.data;
