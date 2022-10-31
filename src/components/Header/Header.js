@@ -17,7 +17,7 @@ const Header = () => {
   const [randomMovie, setRandomMovie] = useState('');
   const [randomImg, setRandomImg] = useState('');
   const baseUrl = 'http://image.tmdb.org/t/p/original';
-  const media = useSelector((state) => state.media);
+  const media = useSelector((state) => state);
   const moviesSeries = media.moviesAndSeries[0]?.data.results;
 
   const carretStyle = isHover

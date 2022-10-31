@@ -12,7 +12,7 @@ import { addMedia } from '../utils/store';
 
 const useFetch = (url, title) => {
   const dispatch = useDispatch();
-  const media = useSelector((state) => state.media);
+  const media = useSelector((state) => state);
 
   useEffect(() => {
     if (media?.movies?.length === 0) {

@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 const NewAndPopular = () => {
   CallUseFetch();
-  const media = useSelector((state) => state.media);
+  const media = useSelector((state) => state);
   const topRated = media.movies.filter((movie) =>
     movie.title.includes('Top Rated Movies')
   );

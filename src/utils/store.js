@@ -41,11 +41,12 @@ const data = createSlice({
 
 export const { addMedia, addToList } = data.actions;
 
-export const store = configureStore({
-  reducer: {
-    media: data.reducer,
-  },
-});
+export const createStore = () =>
+  configureStore({
+    reducer: data.reducer,
+  });
+
+export const store = createStore();
 
 function addItem(store, item) {
   // fix TypeError: Cannot assign to read only property '16' of object '[object Array]'

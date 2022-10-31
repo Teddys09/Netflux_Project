@@ -6,7 +6,7 @@ import Header from '../components/Header/Header';
 import CallUseFetch from '../utils/CallUseFetch';
 const Home = () => {
   CallUseFetch();
-  const media = useSelector((state) => state.media);
+  const media = useSelector((state) => state);
 
   if (
     media.movies.length === 0 ||

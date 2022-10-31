@@ -7,7 +7,7 @@ import CallUseFetch from '../utils/CallUseFetch';
 
 const Series = () => {
   CallUseFetch();
-  const media = useSelector((state) => state.media);
+  const media = useSelector((state) => state);
   const topRated = media.series.filter((series) =>
     series.title.includes('Top Rated Series')
   );

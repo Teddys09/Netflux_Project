@@ -8,7 +8,7 @@ import { AiFillCaretLeft } from 'react-icons/ai';
 
 const MyList = () => {
   CallUseFetch();
-  const userList = useSelector((state) => state.media.userList);
+  const userList = useSelector((state) => state.userList);
 
   const baseUrl = 'http://image.tmdb.org/t/p/original';
   const [caretClickedLeft, setCaretClickedLeft] = useState(false);
