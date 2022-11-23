@@ -49,6 +49,7 @@
     "@testing-library/cypress": "^8.0.3",
     "@types/jest": "^29.2.0",
     "cypress": "^10.11.0",
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "msw": "^0.47.4"
   }
 }

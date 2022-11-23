@@ -15,7 +15,7 @@ const useFetch = (url, title) => {
   const media = useSelector((state) => state);
 
   useEffect(() => {
-    if (media?.movies?.length === 0) {
+    if (media?.movies?.length === 0 && url !== null) {
       Axios.get(url)
         .then((response) => {
           let data = response.data;
@@ -49,13 +49,12 @@ const useFetch = (url, title) => {
     }
   }, [url, title]);
 
-  const fetchImage = async (path, data, allData, dataLenght, i) => {
-    await Axios.get(`https://image.tmdb.org/t/p/original${path}`, {
+  const fetchImage = (path, data, allData, dataLenght, i) => {
+    Axios.get(`https://image.tmdb.org/t/p/original${path}`, {
       responseType: 'blob',
     })
 
       .then((response) => {
-        // fix type error
         let blob = new Blob([response.data], { type: 'image/jpeg' });
         let url = URL.createObjectURL(blob);
         let dataCopy = { ...data };
