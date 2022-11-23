@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Netflux_Project/static/css/main.0ddfe10a.css",
-    "main.js": "/Netflux_Project/static/js/main.c42d8886.js",
+    "main.js": "/Netflux_Project/static/js/main.45439ece.js",
     "static/js/787.3e18af96.chunk.js": "/Netflux_Project/static/js/787.3e18af96.chunk.js",
     "static/media/kids-netflix.png": "/Netflux_Project/static/media/kids-netflix.65575b66ce6be2450013.png",
     "index.html": "/Netflux_Project/index.html",
     "main.0ddfe10a.css.map": "/Netflux_Project/static/css/main.0ddfe10a.css.map",
-    "main.c42d8886.js.map": "/Netflux_Project/static/js/main.c42d8886.js.map",
+    "main.45439ece.js.map": "/Netflux_Project/static/js/main.45439ece.js.map",
     "787.3e18af96.chunk.js.map": "/Netflux_Project/static/js/787.3e18af96.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0ddfe10a.css",
-    "static/js/main.c42d8886.js"
+    "static/js/main.45439ece.js"
   ]
 }
